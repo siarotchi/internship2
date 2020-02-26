@@ -1,49 +1,48 @@
-import React from 'react'
+import React from "react";
 
 class TaskInput extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: ''
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ""
+    };
+  }
 
-    addTask = () => {
-        const {input} = this.state;
-        if(input) {
-            this.props.addTask(input);
-            this.setState({input:''})
-        }
-    }
+  addTask = () => {
+    const { value } = this.state;
+    if (!value) return null;
 
-    inputChange = event => {
-        this.setState({input: event.target.value})
-    }
+    this.props.addTask(value);
+    this.setState({ value: "" });
+  };
 
-    handleEnter = event => {
-        if(event.key === 'Enter') {
-            this.addTask()
-        }
-    }
+  inputChange = event => {
+    this.setState({ value: event.target.value });
+  };
 
-    render() {
-        const {input} = this.state;  
-    
-
-        return (
-            <div className='task-input'>
-                <input 
-                    type="text"
-                    className={`task-control`}
-                    placeholder="Введите название заметки"
-                    onChange={this.inputChange}
-                    onKeyPress={this.handleEnter}
-                    value={input}>                    
-                </input>
-                <button onClick={this.addTask}>Add</button>
-            </div>
-        )
+  handleEnter = event => {
+    if (event.key === "Enter") {
+      this.addTask();
     }
+  };
+
+  render() {
+    const { value } = this.state;
+
+    return (
+      <div className="task-input">
+        <input
+          type="text"
+          className={`task-control`}
+          placeholder="Put name of todo"
+          onChange={this.inputChange}
+          onKeyPress={this.handleEnter}
+          value={value}
+        ></input>
+        <button onClick={this.addTask}>Add</button>
+      </div>
+    );
+  }
 }
 
 export default TaskInput;

@@ -1,19 +1,24 @@
-import React from 'react'
+import React from "react";
 
-const Task = ({task, ...props}) => {
-    const ActionBtn = () => <div className='action-btn'>{ !task.done 
-        ? <p onClick={props.doneTask} >&#10004;</p> 
-        : <p onClick={props.deleteTask}>&#10006;</p>}</div>;    
+const Task = ({ task, doneTask, deleteTask }) => {
+  const className = `task ${task.done ? "lineTh" : ""}`;
 
-    const className = `task ${task.done ? 'lineTh' : ''}`
-        
-    
-    return (
-        <div className={className}>
-            <p>{task.title}</p>
-            <ActionBtn/>
-        </div>
-    );
+  return (
+    <div className={className}>
+      <p>{task.title}</p>
+      <ActionBtn task={task} doneTask={doneTask} deleteTask={deleteTask} />
+    </div>
+  );
 };
+
+const ActionBtn = ({ task, doneTask, deleteTask }) => (
+  <div className="action-btn">
+    {!task.done ? (
+      <p onClick={doneTask}>&#10004;</p>
+    ) : (
+      <p onClick={deleteTask}>&#10006;</p>
+    )}
+  </div>
+);
 
 export default Task;
