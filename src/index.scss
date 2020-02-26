@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App {
+  margin: 0 auto;
+  width:  650px;
+}
+
+.top {
+  width:  100%;
+  color: white;
+  background: rgba(8, 35, 109, 0.884);
+}
+.task {
+  width:  100%;
+  color: rgba(8, 35, 109, 0.884);
+  display: flex;
+  justify-content: space-between;
+}
+.task:hover {
+  background: #04395e3d;
+}
+
+.task p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text)
+}
+
+.task-done {
+  background-color: #00000027;
+}
+
+.action-btn {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.action-btn:hover {
+  background-color: #04395e3d;
+  border-radius: 5px;
+}
+
+h1 {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.task-control {
+  width:  92%;
+}
+button {
+  color: white;
+  background-color: rgba(8, 35, 109, 0.884);
+}
+
+.lineTh {
+  text-decoration: line-through;
+}
