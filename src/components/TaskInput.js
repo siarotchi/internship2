@@ -27,13 +27,14 @@ class TaskInput extends React.Component {
     }
 
     render() {
-        const {input} = this.state;    
+        const {input} = this.state;  
+    
 
         return (
             <div className='task-input'>
                 <input 
                     type="text"
-                    className="task-control"
+                    className={`task-control`}
                     placeholder="Введите название заметки"
                     onChange={this.inputChange}
                     onKeyPress={this.handleEnter}

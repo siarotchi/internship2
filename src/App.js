@@ -53,7 +53,7 @@ class App extends React.Component {
       return (      
         <div className='App'>
           <h1 className='top'>Tasks for the Day:</h1>
-          <TaskInput addTask={this.addTask} />
+          <TaskInput addTask={this.addTask} tasks={tasks} />
           {tasks.map( task => 
             <Task 
               doneTask={ () => this.doneTask(task.id)} 
