@@ -40,6 +40,7 @@ class TaskInput extends React.Component {
           value={value}
         ></input>
         <button onClick={this.addTask}>Add</button>
+        <button onClick={this.ClearBtn}>Clear All</button>
       </div>
     );
   }
