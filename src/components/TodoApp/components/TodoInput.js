@@ -1,6 +1,6 @@
 import React from "react";
 
-class TaskInput extends React.Component {
+class TodoInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,9 +40,10 @@ class TaskInput extends React.Component {
           value={value}
         ></input>
         <button onClick={this.addTask}>Add</button>
+        {/* <button onClick={this.ClearAllBtn}>Clear All</button> */}
       </div>
     );
   }
 }
 
-export default TaskInput;
+export default TodoInput;

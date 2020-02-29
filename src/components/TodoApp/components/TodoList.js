@@ -1,6 +1,6 @@
 import React from "react";
 
-const Task = ({ task, doneTask, deleteTask }) => {
+const TodoList = ({ task, doneTask, deleteTask }) => {
   const className = `task ${task.done ? "lineTh" : ""}`;
 
   return (
@@ -21,4 +21,4 @@ const ActionBtn = ({ task, doneTask, deleteTask }) => (
   </div>
 );
 
-export default Task;
+export default TodoList;
