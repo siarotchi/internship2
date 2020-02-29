@@ -1,6 +1,6 @@
 import React from "react";
-import { Task } from ".";
-import { TaskInput } from ".";
+import { TodoList } from ".";
+import { TodoInput } from ".";
 
 class Todo extends React.Component {
   state = {
@@ -39,20 +39,17 @@ class Todo extends React.Component {
     }));
   };
 
-  ClearAllBtn = state => {
-    this.state.clear();
-  };
-
   render() {
     const { tasks } = this.state;
 
     return (
       <>
-        <TaskInput addTask={this.addTask} tasks={tasks} />
+        <TodoInput addTask={this.addTask} tasks={tasks} />
         {tasks.map(task => (
-          <Task
+          <TodoList
             doneTask={() => this.doneTask(task.id)}
             deleteTask={() => this.deleteTask(task.id)}
+            ClearAllBtn={this.ClearAllBtn}
             task={task}
             key={task.id}
           />
