@@ -76,3 +76,17 @@ button {
   margin: 0 auto;
   overflow: hidden;
 }
+
+//Slider
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider img {
+  width: 250px;
+  height: 250px;
+}
+.slider button {
+  margin: 10px;
+}
