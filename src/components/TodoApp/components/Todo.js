@@ -1,6 +1,6 @@
 import React from "react";
-import { TodoList } from ".";
-import { TodoInput } from ".";
+import { TodoList } from "../";
+import { TodoInput } from "../";
 
 class Todo extends React.Component {
   state = {

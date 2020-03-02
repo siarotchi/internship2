@@ -1,3 +1,4 @@
-import { Todo } from "./TodoApp/components";
+import { Todo } from "./TodoApp";
+import { Slider } from "./Slider";
 
-export { Todo };
+export { Todo, Slider };

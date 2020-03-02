@@ -1,6 +1,5 @@
 import React from "react";
-import { Todo } from "./components";
-import Slider from "./components/Slider/components/Slider";
+import { Todo, Slider } from "./components";
 
 class App extends React.Component {
   render() {
