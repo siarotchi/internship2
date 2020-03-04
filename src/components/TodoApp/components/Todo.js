@@ -16,7 +16,7 @@ class Todo extends React.Component {
       tasks: [
         ...tasks,
         {
-          id: tasks.length !== 0 ? task.lenght : 0,
+          id: tasks.length,
           title: task,
           done: false
         }
@@ -45,7 +45,7 @@ class Todo extends React.Component {
     return (
       <>
         <TodoInput addTask={this.addTask} tasks={tasks} />
-        {tasks.map(task => (
+        {tasks.map((task, index) => (
           <TodoList
             doneTask={() => this.doneTask(task.id)}
             deleteTask={() => this.deleteTask(task.id)}

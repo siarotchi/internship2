@@ -13,13 +13,13 @@ code {
 }
 .App {
   margin: 3% auto;
-  width: 650px;
-}
+  width: 950px;
 
-.App-header {
-  width: 100%;
-  color: white;
-  background: rgba(8, 35, 109, 0.884);
+  & .App-header {
+    width: 100%;
+    color: white;
+    background: rgba(8, 35, 109, 0.884);
+  }
 }
 
 //ToDo App
@@ -28,19 +28,19 @@ code {
   color: rgba(8, 35, 109, 0.884);
   display: flex;
   justify-content: space-between;
-}
-.task:hover {
-  background: #04395e3d;
-}
 
-.task p {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text);
-}
+  &.task p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  &.task:hover {
+    background: #04395e3d;
+  }
 
-.task-done {
-  background-color: #00000027;
+  &.task-done {
+    background-color: #00000027;
+  }
 }
 
 .action-btn p {
@@ -75,16 +75,8 @@ button {
   text-decoration: line-through;
 }
 
-.slider-wraper {
-  background-color: red;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 //Slider
+
 .slider {
   display: flex;
   align-items: center;

@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import btc from "../../../assets/img/btc.png";
+import dash from "../../../assets/img/dash.png";
+import eth from "../../../assets/img/eth.png";
+import ltc from "../../../assets/img/ltc.png";
+import xrp from "../../../assets/img/xrp.png";
+import monero from "../../../assets/img/monero.png";
+import zcash from "../../../assets/img/zcash.png";
 
 class Slider extends Component {
   state = {
-    images: [
-      "https://labs.sogeti.com/wp-content/uploads/2017/06/Arndbrugman_Crypto.jpg",
-      "https://www.goldeneaglecoin.com/resource/productimages/crypto-1oz-ethereum-obv.png",
-      "https://i0.wp.com/xrpripplenews.com/wp-content/uploads/2019/08/xrpp-1.png?fit=461%2C490&ssl=1",
-      "https://www.goldeneaglecoin.com/resource/productimages/1oz-crypto-dash-silver-obv.png",
-      "https://www.goldeneaglecoin.com/resource/productimages/crypto-1oz-neo-obv.png"
-    ],
+    images: [btc, dash, eth, ltc, xrp, monero, zcash],
     imageIndex: 0,
     canGoPrev: false,
     canGoNext: true
@@ -36,6 +37,36 @@ class Slider extends Component {
     return newIndex <= images.length ? newIndex : imageIndex;
   };
 
+  dotsCounter = () => {
+    const { images } = this.state;
+
+    return (
+      <div>
+        {images.map((images, imageIndex) => (
+          <button
+            onClick={() => this.currentSlideDot(imageIndex)}
+            className="slider-dot"
+          >
+            {imageIndex >= 0 ? imageIndex : imageIndex + 1}
+          </button>
+        ))}
+      </div>
+    );
+  };
+
+  currentSlideDot = imageIndex => {
+    const { images } = this.state;
+
+    this.setState(
+      imageIndex > 0
+        ? { imageIndex: (imageIndex = 0 ? imageIndex + 2 : imageIndex - 1) }
+        : {
+            imageIndex:
+              imageIndex >= images.lenght ? imageIndex : imageIndex - 1
+          }
+    );
+  };
+
   render() {
     const { imageIndex, images } = this.state;
 
@@ -56,27 +87,24 @@ class Slider extends Component {
               src={images[imageIndex >= images.length - 1 ? 0 : imageIndex + 1]}
               alt=""
             ></img>
+            <img
+              src={images[imageIndex >= images.length - 1 ? 2 : imageIndex + 2]}
+              alt=""
+            ></img>
           </div>
           <div>
             <button
-              disabled={images.length - 1 === imageIndex}
+              disabled={images.length - 1 === imageIndex + 2}
+              /* for 1 image dasable
+               disabled={images.length - 1 === imageIndex} e */
               onClick={() => this.nextSlide(imageIndex, "next")}
             >
               Next
             </button>
           </div>
         </div>
-        <div className="sliderDots">
-          <button className="slider-dot">
-            <a href="#"></a>
-          </button>
-          <button className="slider-dot">
-            <a href="#"></a>
-          </button>
-          <button className="slider-dot">
-            <a href="#"></a>
-          </button>
-        </div>
+
+        <div className="sliderDots">{this.dotsCounter()}</div>
       </>
     );
   }
