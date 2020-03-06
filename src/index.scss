@@ -43,19 +43,19 @@ code {
   }
 }
 
-.action-btn p {
-  width: 20px;
-  height: 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-}
-.action-btn:hover {
-  background-color: #04395e3d;
-  border-radius: 5px;
-}
+// .action-btn p {
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 12px;
+//   cursor: pointer;
+//   padding: 5px;
+//   display: flex;
+//   justify-content: center;
+// }
+// .action-btn:hover {
+//   background-color: #04395e3d;
+//   border-radius: 5px;
+// }
 
 h1 {
   height: 60px;
@@ -66,10 +66,10 @@ h1 {
 .task-control {
   width: 92%;
 }
-button {
-  color: white;
-  background-color: rgba(8, 35, 109, 0.884);
-}
+// button {
+//   color: white;
+//   background-color: rgba(8, 35, 109, 0.884);
+// }
 
 .lineTh {
   text-decoration: line-through;
@@ -78,9 +78,11 @@ button {
 //Slider
 
 .slider {
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   & img {
     width: 250px;

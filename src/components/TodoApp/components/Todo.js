@@ -44,6 +44,7 @@ class Todo extends React.Component {
 
     return (
       <>
+        <h1 className="App-header">Tasks for the Day:</h1>
         <TodoInput addTask={this.addTask} tasks={tasks} />
         {tasks.map((task, index) => (
           <TodoList

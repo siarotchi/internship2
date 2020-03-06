@@ -47,7 +47,7 @@ class Slider extends Component {
             onClick={() => this.currentSlideDot(imageIndex)}
             className="slider-dot"
           >
-            {imageIndex >= 0 ? imageIndex : imageIndex + 1}
+            {/*to view INDEX {imageIndex >= 0 ? imageIndex : imageIndex + 1} */}
           </button>
         ))}
       </div>
@@ -59,10 +59,10 @@ class Slider extends Component {
 
     this.setState(
       imageIndex > 0
-        ? { imageIndex: (imageIndex = 0 ? imageIndex + 2 : imageIndex - 1) }
+        ? { imageIndex: imageIndex - 1 }
         : {
             imageIndex:
-              imageIndex >= images.lenght ? imageIndex : imageIndex - 1
+              imageIndex >= images.length ? imageIndex : imageIndex - 1
           }
     );
   };
@@ -75,6 +75,8 @@ class Slider extends Component {
         <div className="slider">
           <div>
             <button
+              type="button"
+              className="btn btn-outline-success"
               disabled={0 === imageIndex}
               onClick={() => this.nextSlide(imageIndex, "prev")}
             >
@@ -94,6 +96,8 @@ class Slider extends Component {
           </div>
           <div>
             <button
+              type="button"
+              className="btn btn-outline-success"
               disabled={images.length - 1 === imageIndex + 2}
               /* for 1 image dasable
                disabled={images.length - 1 === imageIndex} e */

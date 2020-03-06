@@ -14,10 +14,23 @@ const TodoList = ({ task, doneTask, deleteTask }) => {
 const ActionBtn = ({ task, doneTask, deleteTask }) => (
   <div className="action-btn">
     {!task.done ? (
-      <p onClick={doneTask}>&#10004;</p>
+      <button
+        onClick={doneTask}
+        type="button"
+        className="btn btn-outline-success"
+      ></button>
+    ) : (
+      <button
+        onClick={deleteTask}
+        type="button"
+        className="btn btn-outline-danger"
+      ></button>
+    )}
+
+    {/* { <p onClick={doneTask}>&#10004;</p>
     ) : (
       <p onClick={deleteTask}>&#10006;</p>
-    )}
+    )} } */}
   </div>
 );
 

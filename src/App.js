@@ -1,16 +1,29 @@
 import React from "react";
-import { Todo, Slider } from "./components";
+import { Switch, Route } from "react-router-dom";
+
+import SliderPage from "./pages/slider";
+import TodoPage from "./pages/todo";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Slider />
-        <h1 className="App-header">Tasks for the Day:</h1>
-        <Todo />
-      </div>
+      <Switch>
+        <Route path="/slider" component={SliderPage} />
+        <Route path="/todo" component={TodoPage} />
+        <Route
+          component={() => (
+            <React.Fragment>Sorry, this page was not found</React.Fragment>
+          )}
+        />
+      </Switch>
     );
   }
 }
 
 export default App;
+
+// <div className="App">
+//   <Slider />
+//
+//   <Todo />
+// </div>

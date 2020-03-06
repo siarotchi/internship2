@@ -39,7 +39,14 @@ class TodoInput extends React.Component {
           onKeyPress={this.handleEnter}
           value={value}
         ></input>
-        <button onClick={this.addTask}>Add</button>
+        {/* <button onClick={this.addTask}>Add</button> */}
+        <button
+          onClick={this.addTask}
+          type="button"
+          className="btn btn-primary"
+        >
+          Add
+        </button>
         {/* <button onClick={this.ClearAllBtn}>Clear All</button> */}
       </div>
     );
