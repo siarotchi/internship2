@@ -11,68 +11,136 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.App {
-  margin: 3% auto;
-  width: 650px;
+.app-wrapper {
+  margin: 1% auto;
+  width: 950px;
 }
 
-.App-header {
-  width: 100%;
-  color: white;
-  background: rgba(8, 35, 109, 0.884);
+.header-app-wraper {
+  height: 150px;
+  border-style: ridge;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  & .header-app-left {
+    display: flex;
+    align-items: center;
+    & span {
+      margin-left: 40px;
+      & a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+  &.header-app-wraper nav {
+    display: flex;
+  }
 }
+
+ul#menu li {
+  display: inline;
+  font-weight: bold;
+  margin: 20px;
+  & a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  & a.active {
+    color: gold;
+  }
+}
+
+//ToDo App
 .task {
   width: 100%;
-  color: rgba(8, 35, 109, 0.884);
+  color: #3b5998;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+
+  &.task li {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &.task li:hover {
+    background: #04395e3d;
+    cursor: pointer;
+  }
 }
-.task:hover {
-  background: #04395e3d;
+.task-input {
+  display: flex;
+  & button {
+    margin-left: 10px;
+  }
 }
 
-.task p {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text);
-}
-
-.task-done {
-  background-color: #00000027;
-}
-
-.action-btn {
-  cursor: pointer;
-  margin-right: 10px;
-}
-.action-btn:hover {
-  background-color: #04395e3d;
-  border-radius: 5px;
-}
-
-h1 {
+.todo-container h1 {
   height: 60px;
+  color: rgba(8, 35, 109, 0.884);
   display: flex;
   align-items: center;
 }
 
-.task-control {
-  width: 92%;
-}
-button {
-  color: white;
-  background-color: rgba(8, 35, 109, 0.884);
+.list-group {
+  width: 100%;
 }
 
 .lineTh {
   text-decoration: line-through;
 }
 
-.slider-wraper {
-  background-color: red;
+//Slider
+
+.slider {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
+
+  & img {
+    width: 250px;
+    height: 250px;
+  }
+  & button {
+    margin: 10px;
+  }
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+}
+
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: black;
+}
+
+.sliderDots {
+  display: flex;
+  justify-content: center;
+
+  & .slider-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+}
+.isActive {
+  background-color: red;
 }

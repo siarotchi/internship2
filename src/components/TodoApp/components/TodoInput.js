@@ -33,13 +33,20 @@ class TodoInput extends React.Component {
       <div className="task-input">
         <input
           type="text"
-          className={`task-control`}
+          className="form-control"
           placeholder="Put name of todo"
           onChange={this.inputChange}
           onKeyPress={this.handleEnter}
           value={value}
         ></input>
-        <button onClick={this.addTask}>Add</button>
+        {/* <button onClick={this.addTask}>Add</button> */}
+        <button
+          onClick={this.addTask}
+          type="button"
+          className="btn btn-primary"
+        >
+          Add
+        </button>
         {/* <button onClick={this.ClearAllBtn}>Clear All</button> */}
       </div>
     );

@@ -1,12 +1,12 @@
 import React from "react";
-import { TodoList } from ".";
-import { TodoInput } from ".";
+import { TodoList } from "../";
+import { TodoInput } from "../";
 
 class Todo extends React.Component {
   state = {
     tasks: [
       { id: 0, title: "Create react todo app", done: false },
-      { id: 1, title: "Use Classes", done: true },
+      { id: 1, title: "Use Classes", done: false },
       { id: 2, title: "Add buttons", done: false }
     ]
   };
@@ -16,7 +16,7 @@ class Todo extends React.Component {
       tasks: [
         ...tasks,
         {
-          id: tasks.length !== 0 ? task.lenght : 0,
+          id: tasks.length,
           title: task,
           done: false
         }
@@ -43,9 +43,11 @@ class Todo extends React.Component {
     const { tasks } = this.state;
 
     return (
-      <>
+      <div className="todo-container">
+        <h1 className="todo-header">Tasks for the Day:</h1>
         <TodoInput addTask={this.addTask} tasks={tasks} />
-        {tasks.map(task => (
+        <hr />
+        {tasks.map((task, index) => (
           <TodoList
             doneTask={() => this.doneTask(task.id)}
             deleteTask={() => this.deleteTask(task.id)}
@@ -54,7 +56,8 @@ class Todo extends React.Component {
             key={task.id}
           />
         ))}
-      </>
+        <hr />
+      </div>
     );
   }
 }
