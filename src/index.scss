@@ -11,65 +11,84 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.App {
-  margin: 3% auto;
+.app-wrapper {
+  margin: 1% auto;
   width: 950px;
+}
 
-  & .App-header {
-    width: 100%;
-    color: white;
-    background: rgba(8, 35, 109, 0.884);
+.header-app-wraper {
+  height: 150px;
+  border-style: ridge;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  & .header-app-left {
+    display: flex;
+    align-items: center;
+    & span {
+      margin-left: 40px;
+      & a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+  &.header-app-wraper nav {
+    display: flex;
+  }
+}
+
+ul#menu li {
+  display: inline;
+  font-weight: bold;
+  margin: 20px;
+  & a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  & a.active {
+    color: gold;
   }
 }
 
 //ToDo App
 .task {
   width: 100%;
-  color: rgba(8, 35, 109, 0.884);
+  color: #3b5998;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 
-  &.task p {
+  &.task li {
     font-size: 18px;
     font-weight: 500;
-    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  &.task:hover {
+  &.task li:hover {
     background: #04395e3d;
+    cursor: pointer;
   }
-
-  &.task-done {
-    background-color: #00000027;
+}
+.task-input {
+  display: flex;
+  & button {
+    margin-left: 10px;
   }
 }
 
-// .action-btn p {
-//   width: 20px;
-//   height: 20px;
-//   border-radius: 12px;
-//   cursor: pointer;
-//   padding: 5px;
-//   display: flex;
-//   justify-content: center;
-// }
-// .action-btn:hover {
-//   background-color: #04395e3d;
-//   border-radius: 5px;
-// }
-
-h1 {
+.todo-container h1 {
   height: 60px;
+  color: rgba(8, 35, 109, 0.884);
   display: flex;
   align-items: center;
 }
 
-.task-control {
-  width: 92%;
+.list-group {
+  width: 100%;
 }
-// button {
-//   color: white;
-//   background-color: rgba(8, 35, 109, 0.884);
-// }
 
 .lineTh {
   text-decoration: line-through;
@@ -92,6 +111,24 @@ h1 {
     margin: 10px;
   }
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+}
+
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: black;
+}
 
 .sliderDots {
   display: flex;
@@ -100,8 +137,10 @@ h1 {
   & .slider-dot {
     width: 20px;
     height: 20px;
-    background-color: green;
     border-radius: 50%;
     margin: 5px;
   }
+}
+.isActive {
+  background-color: red;
 }

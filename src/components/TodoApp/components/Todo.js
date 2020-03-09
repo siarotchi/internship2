@@ -6,7 +6,7 @@ class Todo extends React.Component {
   state = {
     tasks: [
       { id: 0, title: "Create react todo app", done: false },
-      { id: 1, title: "Use Classes", done: true },
+      { id: 1, title: "Use Classes", done: false },
       { id: 2, title: "Add buttons", done: false }
     ]
   };
@@ -43,9 +43,10 @@ class Todo extends React.Component {
     const { tasks } = this.state;
 
     return (
-      <>
-        <h1 className="App-header">Tasks for the Day:</h1>
+      <div className="todo-container">
+        <h1 className="todo-header">Tasks for the Day:</h1>
         <TodoInput addTask={this.addTask} tasks={tasks} />
+        <hr />
         {tasks.map((task, index) => (
           <TodoList
             doneTask={() => this.doneTask(task.id)}
@@ -55,7 +56,8 @@ class Todo extends React.Component {
             key={task.id}
           />
         ))}
-      </>
+        <hr />
+      </div>
     );
   }
 }

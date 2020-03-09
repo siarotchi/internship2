@@ -33,7 +33,7 @@ class TodoInput extends React.Component {
       <div className="task-input">
         <input
           type="text"
-          className={`task-control`}
+          className="form-control"
           placeholder="Put name of todo"
           onChange={this.inputChange}
           onKeyPress={this.handleEnter}

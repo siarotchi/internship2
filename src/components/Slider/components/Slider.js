@@ -6,6 +6,7 @@ import ltc from "../../../assets/img/ltc.png";
 import xrp from "../../../assets/img/xrp.png";
 import monero from "../../../assets/img/monero.png";
 import zcash from "../../../assets/img/zcash.png";
+import s from "../../../index.scss";
 
 class Slider extends Component {
   state = {
@@ -46,8 +47,11 @@ class Slider extends Component {
           <button
             onClick={() => this.currentSlideDot(imageIndex)}
             className="slider-dot"
+            // activeClassName={s.active}
+            // activeId={null}
           >
-            {/*to view INDEX {imageIndex >= 0 ? imageIndex : imageIndex + 1} */}
+            {/* to view index*/}
+            {/* {imageIndex >= 0 ? imageIndex : imageIndex + 1} */}
           </button>
         ))}
       </div>
@@ -67,21 +71,31 @@ class Slider extends Component {
     );
   };
 
+  // isActiveDot(imageIndex) {
+  //   this.currentSlideDot().imageIndex === imageIndex ? className += 'isActive' : '';
+  // }
+
   render() {
     const { imageIndex, images } = this.state;
 
     return (
       <>
+        <hr />
         <div className="slider">
           <div>
-            <button
-              type="button"
-              className="btn btn-outline-success"
-              disabled={0 === imageIndex}
+            <a
+              className="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+              disabled={imageIndex === 0}
               onClick={() => this.nextSlide(imageIndex, "prev")}
             >
-              Previos
-            </button>
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
           </div>
           <div>
             <img src={images[imageIndex]} alt=""></img>
@@ -90,28 +104,36 @@ class Slider extends Component {
               alt=""
             ></img>
             <img
-              src={images[imageIndex >= images.length - 1 ? 2 : imageIndex + 2]}
+              src={images[imageIndex >= images.length - 2 ? 0 : imageIndex + 2]}
               alt=""
             ></img>
           </div>
           <div>
-            <button
-              type="button"
-              className="btn btn-outline-success"
-              disabled={images.length - 1 === imageIndex + 2}
-              /* for 1 image dasable
-               disabled={images.length - 1 === imageIndex} e */
+            <a
+              className="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+              disabled={imageIndex === images.length - 1}
+              //for 1 image {imageIndex === images.length - 3}
               onClick={() => this.nextSlide(imageIndex, "next")}
             >
-              Next
-            </button>
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
           </div>
         </div>
 
         <div className="sliderDots">{this.dotsCounter()}</div>
+        <hr />
       </>
     );
   }
 }
 
 export default Slider;
+
+/* for 1 image dasable disabled={images.length - 1 === imageIndex} e
+ */

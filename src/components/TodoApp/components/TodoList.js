@@ -1,12 +1,17 @@
 import React from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const TodoList = ({ task, doneTask, deleteTask }) => {
   const className = `task ${task.done ? "lineTh" : ""}`;
 
   return (
     <div className={className}>
-      <p>{task.title}</p>
-      <ActionBtn task={task} doneTask={doneTask} deleteTask={deleteTask} />
+      <ul class="list-group">
+        <li class="list-group-item">
+          {task.title}{" "}
+          <ActionBtn task={task} doneTask={doneTask} deleteTask={deleteTask} />
+        </li>
+      </ul>
     </div>
   );
 };
@@ -17,20 +22,19 @@ const ActionBtn = ({ task, doneTask, deleteTask }) => (
       <button
         onClick={doneTask}
         type="button"
-        className="btn btn-outline-success"
-      ></button>
+        className="btn btn-outline-success btn-lg"
+      >
+        &#9998;
+      </button>
     ) : (
       <button
         onClick={deleteTask}
         type="button"
-        className="btn btn-outline-danger"
-      ></button>
+        className="btn btn-outline-danger btn-lg"
+      >
+        &#10006;
+      </button>
     )}
-
-    {/* { <p onClick={doneTask}>&#10004;</p>
-    ) : (
-      <p onClick={deleteTask}>&#10006;</p>
-    )} } */}
   </div>
 );
 
