@@ -49,7 +49,7 @@ class Home extends React.Component {
             solve problems, because there were many more of them on the network.
             The ability to find solutions by any means without fear of new
             actions. When i became a Senior operator, i'm acquired a new
-            mentoring skill. I've trained the operator from scratch until his
+            mentoring skill. I've trained the operator from scratch until my
             replacement, which gave me experience and understanding of the
             complexity of the training process. And teamwork, where i learned to
             divide work by complexity and help to resolve problems to covering
@@ -90,9 +90,9 @@ class Home extends React.Component {
           <h2>Why do you want to be a UI developer?</h2>
           <p>
             Simple answer I loved it. I loved the thrill. I love to see my
-            imagination come to life. I loved gadgets. I choose to be a UI
-            developer to bring my ideas to life and help others see what I think
-            a better world looks like.
+            imagination come to life. I choose to be a UI developer to bring my
+            ideas to life and help others see what I think a better world looks
+            like.
           </p>
           <h2>What's your dream job?</h2>
           <p>

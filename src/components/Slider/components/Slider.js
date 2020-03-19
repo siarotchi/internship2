@@ -134,6 +134,3 @@ class Slider extends Component {
 }
 
 export default Slider;
-
-/* for 1 image dasable disabled={images.length - 1 === imageIndex} e
- */
