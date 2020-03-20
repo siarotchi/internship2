@@ -7,13 +7,11 @@ const Header = () => {
   return (
     <header className="header-app-wraper">
       <div className="header-app-left">
-        <img width="100px" height="100px" src={logo}></img>
+        <img width="100px" height="100px" src={logo} alt="logo"></img>
 
         <span>
           <NavLink to="/home">
-            <a>
-              <h1>Stanislav Iarotchi</h1>
-            </a>
+            <h1>Stanislav Iarotchi</h1>
           </NavLink>
         </span>
       </div>
@@ -22,23 +20,17 @@ const Header = () => {
         <ul id="menu">
           <li>
             <NavLink activeClassName={s.active} to="/slider">
-              <a>Slider-Coin</a>
+              Slider-Coin
             </NavLink>
           </li>
           <li>
-            <NavLink to="/todo">
-              <a>To-do List</a>
-            </NavLink>
+            <NavLink to="/todo">To-do List</NavLink>
           </li>
           <li>
-            <NavLink to="/333">
-              <a>333</a>
-            </NavLink>
+            <NavLink to="/lineSlider">LineSlider</NavLink>
           </li>
           <li>
-            <NavLink to="/444">
-              <a>444</a>
-            </NavLink>
+            <NavLink to="/444">444</NavLink>
           </li>
         </ul>
       </nav>
