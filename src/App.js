@@ -1,9 +1,7 @@
 import React from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
-import SliderPage from "./pages/slider";
-import TodoPage from "./pages/todo";
-import HomePage from "./pages/home";
+import { Switch, Route } from "react-router-dom";
 import { Header } from "./components/.";
+import { SliderPage, TodoPage, HomePage, LineSliderPage } from "./pages";
 
 class App extends React.Component {
   render() {
@@ -14,15 +12,8 @@ class App extends React.Component {
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/slider" component={SliderPage} />
           <Route exact path="/todo" component={TodoPage} />
-          <Route
-            path="/444"
-            render={() => <h1>MAN!!! NOT DONE YET!!!GEEZ!</h1>}
-          />
-          <Route
-            component={() => (
-              <React.Fragment>Sorry, this page was not found</React.Fragment>
-            )}
-          />
+          <Route exact path="/lineSlider" component={LineSliderPage} />
+          <Route path="/444" render={() => <h1>MAN!!! NOT DONE YET!!!GEEZ!</h1>} />
         </Switch>
       </div>
     );

@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import btc from "../../../assets/img/btc.png";
-import dash from "../../../assets/img/dash.png";
-import eth from "../../../assets/img/eth.png";
-import ltc from "../../../assets/img/ltc.png";
-import xrp from "../../../assets/img/xrp.png";
-import monero from "../../../assets/img/monero.png";
-import zcash from "../../../assets/img/zcash.png";
-import s from "../../../index.scss";
+import images from "../../../assets/img/sliderImages";
+import "../../../index.scss";
 
 class Slider extends Component {
   state = {
-    images: [btc, dash, eth, ltc, xrp, monero, zcash],
+    images,
     imageIndex: 0,
     canGoPrev: false,
     canGoNext: true
@@ -18,10 +12,7 @@ class Slider extends Component {
 
   nextSlide = (imageIndex, direction) => {
     this.setState({
-      imageIndex:
-        direction === "next"
-          ? this.makeNextStep(imageIndex)
-          : this.makePrevStep(imageIndex)
+      imageIndex: direction === "next" ? this.makeNextStep(imageIndex) : this.makePrevStep(imageIndex)
     });
   };
 
@@ -45,6 +36,7 @@ class Slider extends Component {
       <div>
         {images.map((images, imageIndex) => (
           <button
+            key={imageIndex}
             onClick={() => this.currentSlideDot(imageIndex)}
             className="slider-dot"
             // activeClassName={s.active}
@@ -65,8 +57,7 @@ class Slider extends Component {
       imageIndex > 0
         ? { imageIndex: imageIndex - 1 }
         : {
-            imageIndex:
-              imageIndex >= images.length ? imageIndex : imageIndex - 1
+            imageIndex: imageIndex >= images.length ? imageIndex : imageIndex - 1
           }
     );
   };
@@ -91,22 +82,13 @@ class Slider extends Component {
               disabled={imageIndex === 0}
               onClick={() => this.nextSlide(imageIndex, "prev")}
             >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             </a>
           </div>
           <div>
             <img src={images[imageIndex]} alt=""></img>
-            <img
-              src={images[imageIndex >= images.length - 1 ? 0 : imageIndex + 1]}
-              alt=""
-            ></img>
-            <img
-              src={images[imageIndex >= images.length - 2 ? 0 : imageIndex + 2]}
-              alt=""
-            ></img>
+            <img src={images[imageIndex >= images.length - 1 ? 0 : imageIndex + 1]} alt=""></img>
+            <img src={images[imageIndex >= images.length - 2 ? 0 : imageIndex + 2]} alt=""></img>
           </div>
           <div>
             <a
@@ -118,10 +100,7 @@ class Slider extends Component {
               //for 1 image {imageIndex === images.length - 3}
               onClick={() => this.nextSlide(imageIndex, "next")}
             >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
             </a>
           </div>
         </div>
@@ -134,6 +113,3 @@ class Slider extends Component {
 }
 
 export default Slider;
-
-/* for 1 image dasable disabled={images.length - 1 === imageIndex} e
- */
