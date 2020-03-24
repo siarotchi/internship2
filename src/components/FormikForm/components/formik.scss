@@ -1,0 +1,39 @@
+form {
+  width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  background: rgb(220, 220, 220);
+  border: ridge;
+  font-family: "Times New Roman", Times, serif;
+}
+h2 {
+  margin: 25px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.input-row button {
+  margin: 10px 40px;
+}
+.input-row {
+  clear: both;
+  text-align: right;
+  margin: 10px 40px;
+}
+label {
+  float: left;
+  font-weight: bold;
+}
+#radio {
+  margin: 0 40px;
+}
+#street {
+  height: 100px;
+}
+.valid {
+  color: green;
+  font-size: 12px;
+}
+.invalid {
+  color: red;
+  font-size: 12px;
+}

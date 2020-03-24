@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Header } from "./components/.";
-import { SliderPage, TodoPage, HomePage, LineSliderPage } from "./pages";
+import { SliderPage, TodoPage, HomePage, LineSliderPage, FormikFormPage } from "./pages";
 
 class App extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class App extends React.Component {
           <Route exact path="/slider" component={SliderPage} />
           <Route exact path="/todo" component={TodoPage} />
           <Route exact path="/lineSlider" component={LineSliderPage} />
-          <Route path="/444" render={() => <h1>MAN!!! NOT DONE YET!!!GEEZ!</h1>} />
+          <Route exact path="/formikForm" component={FormikFormPage} />
         </Switch>
       </div>
     );
