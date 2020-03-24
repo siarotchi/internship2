@@ -1,11 +1,17 @@
 import React from "react";
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import s from "../../index.scss";
+import { switchTheme } from "../../redux/actions/appActions";
 
-const Header = () => {
+const Header = ({ dispatch, appColor }) => {
+  const changeAppTheme = () => {
+    dispatch(switchTheme("green"));
+  };
+
   return (
-    <header className="header-app-wraper">
+    <header className="header-app-wraper" style={{ backgroundColor: appColor }}>
       <div className="header-app-left">
         <img width="100px" height="100px" src={logo} alt="logo"></img>
 
@@ -34,8 +40,15 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <button type="button" onClick={changeAppTheme}>
+        ChangeTheme
+      </button>
     </header>
   );
 };
 
-export default Header;
+const mapStateToProps = state => ({
+  appColor: state.app.appTheme
+});
+
+export default connect(mapStateToProps)(Header);
