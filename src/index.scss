@@ -9,13 +9,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-.app-wrapper {
+#root {
   margin: 1% auto;
-  width: 950px;
+  max-width: 950px;
 }
-
+@media screen and (max-width: 870px) {
+  #root {
+    width: 90%;
+  }
+  ul#menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header-app-wraper {
+    padding: 5%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .header-app-left h1 {
+    margin: 0;
+  }
+  ul#menu {
+    padding-left: 10%;
+  }
+}
 .header-app-wraper {
-  height: 150px;
+  height: 180px;
   border-style: ridge;
   display: flex;
   justify-content: space-around;
@@ -40,7 +59,7 @@ code {
 ul#menu li {
   display: inline;
   font-weight: bold;
-  margin: 15px;
+  margin: 10px;
   & a {
     cursor: pointer;
     text-decoration: none;
@@ -96,6 +115,7 @@ ul#menu li {
 
 .slider {
   height: 300px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
