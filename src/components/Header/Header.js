@@ -36,8 +36,11 @@ const Header = ({ dispatch, appColor }) => {
             <NavLink to="/lineSlider">LineSlider</NavLink>
           </li>
           <li>
-            <NavLink to="/444">444</NavLink>
+            <NavLink to="/formikForm">Formik</NavLink>
           </li>
+          {/* <li>
+            <NavLink to="/444">444</NavLink>
+          </li> */}
         </ul>
       </nav>
       <button type="button" onClick={changeAppTheme}>

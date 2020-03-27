@@ -9,12 +9,12 @@ class LineSlider extends Component {
   };
   moveLeft = () => {
     this.setState(prevState => ({
-      margin: prevState.margin - /*180*/ 250
+      margin: prevState.margin + /*180*/ 250
     }));
   };
   moveRight = () => {
     this.setState(prevState => ({
-      margin: prevState.margin + /*180*/ 250
+      margin: prevState.margin - /*180*/ 250
     }));
   };
 
