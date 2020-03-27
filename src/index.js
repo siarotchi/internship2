@@ -7,10 +7,14 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 
 import App from "./App";
 import "./index.scss";
+import { Provider } from "react-redux";
+import Store from "./redux/store";
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider store={Store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
