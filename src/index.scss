@@ -13,7 +13,7 @@ code {
   margin: 1% auto;
   max-width: 950px;
 }
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 900px) {
   #root {
     width: 90%;
   }
@@ -44,7 +44,7 @@ code {
     display: flex;
     align-items: center;
     & span {
-      margin-left: 40px;
+      margin-left: 20px;
       & a {
         cursor: pointer;
         text-decoration: none;
@@ -67,6 +67,54 @@ ul#menu li {
   & a.active {
     color: gold;
   }
+}
+.content-footer {
+  background-image: url("https://ak7.picdn.net/shutterstock/videos/14803987/thumb/6.jpg");
+  background-size: cover;
+  // background-position: bottom;
+}
+
+//Checkbox Theme Switcher
+.switcherTheme {
+  height: 90%;
+  & input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  & label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 45px;
+    height: 30px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  & label:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  & label:active:after {
+    width: 30px;
+  }
+}
+
+.switcherTheme input:checked + label {
+  background: #007bff;
+}
+
+.switcherTheme input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
 }
 
 //ToDo App
@@ -158,7 +206,7 @@ ul#menu li {
     border-radius: 50%;
     margin: 5px;
   }
-}
-.isActive {
-  background-color: red;
+  & button:hover {
+    background-color: gold;
+  }
 }
