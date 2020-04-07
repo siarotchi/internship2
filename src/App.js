@@ -1,23 +1,23 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
 import { Header } from "./components/.";
-import { SliderPage, TodoPage, HomePage, LineSliderPage, FormikFormPage } from "./pages";
+import { connect } from "react-redux";
+import Routes from "./routes";
 
 class App extends React.Component {
   render() {
+    const { appColor } = this.props;
+
     return (
-      <div className="app-wrapper">
+      <div className="app-wrapper" style={{ backgroundColor: appColor }}>
         <Header />
-        <Switch>
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/slider" component={SliderPage} />
-          <Route exact path="/todo" component={TodoPage} />
-          <Route exact path="/lineSlider" component={LineSliderPage} />
-          <Route exact path="/formikForm" component={FormikFormPage} />
-        </Switch>
+        <Routes />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  appColor: state.app.appTheme
+});
+
+export default connect(mapStateToProps)(App);
